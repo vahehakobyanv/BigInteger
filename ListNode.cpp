@@ -350,4 +350,76 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
     }
     return list4;
  }
-
+ bool ListNode::great( ListNode& list1, ListNode& list2)
+ {
+	 if(list1.length > list2.length)
+	 {
+		 return true;
+	 }
+	 else if(list1.length < list2.length)
+	 {
+		 return false;
+	 }
+	 Node* lt1 = list1.head;
+	 Node* lt2 = list2.head;
+	 while(lt1 != nullptr)
+	{
+		if(lt1->data > lt2->data)
+		{
+			return true;
+		}
+		if(lt1->data < lt2->data)
+		{
+			return false;
+		}
+		lt1 = lt1->next;
+		lt2 = lt2->next;
+	}
+	 return false;
+ }
+  bool ListNode::less( ListNode& list1, ListNode& list2)
+ {
+	 if(list1.length > list2.length)
+	 {
+		 return false;
+	 }
+	 else if(list1.length < list2.length)
+	 {
+		 return true;
+	 }
+	 Node* lt1 = list1.head;
+	 Node* lt2 = list2.head;
+	 while(lt1 != nullptr)
+	{
+		if(lt1->data > lt2->data)
+		{
+			return false;
+		}
+		if(lt1->data < lt2->data)
+		{
+			return true;
+		}
+		lt1 = lt1->next;
+		lt2 = lt2->next;
+	}
+	 return false;
+ }
+   bool ListNode::equal( ListNode& list1, ListNode& list2)
+ {
+	 if(list1.length != list2.length)
+	 {
+		 return false;
+	 }
+	 Node* lt1 = list1.head;
+	 Node* lt2 = list2.head;
+	 while(lt1 != nullptr)
+	{
+		if(lt1->data != lt2->data)
+		{
+			return false;
+		}
+		lt1 = lt1->next;
+		lt2 = lt2->next;
+	}
+	 return true;
+ }

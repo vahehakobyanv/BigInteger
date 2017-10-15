@@ -20,5 +20,8 @@ public:
   ListNode sum(const ListNode& list1,const ListNode& list2);
   ListNode sub(const ListNode& list1,const ListNode& list2);
   ListNode mul(const ListNode& list1,const ListNode& list2);
+  bool great( ListNode& list1, ListNode& list2);
+  bool less( ListNode& list1, ListNode& list2);
+  bool equal( ListNode& list1, ListNode& list2);
 };
 #endif
