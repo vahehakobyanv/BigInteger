@@ -238,6 +238,7 @@ ListNode ListNode::sum(const ListNode& list1,const ListNode& list2) {
      }
    return list3;
 }
+
 ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
    int max_length = 0;
    ListNode sub1;
@@ -350,7 +351,7 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
     }
     return list4;
  }
- bool ListNode::great( ListNode& list1, ListNode& list2)
+ bool ListNode::great( const ListNode& list1,const ListNode& list2)
  {
 	 if(list1.length > list2.length)
 	 {
@@ -377,7 +378,7 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
 	}
 	 return false;
  }
-  bool ListNode::less( ListNode& list1, ListNode& list2)
+  bool ListNode::less(const ListNode& list1,const ListNode& list2)
  {
 	 if(list1.length > list2.length)
 	 {
@@ -387,6 +388,7 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
 	 {
 		 return true;
 	 }
+	 
 	 Node* lt1 = list1.head;
 	 Node* lt2 = list2.head;
 	 while(lt1 != nullptr)
@@ -404,7 +406,7 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
 	}
 	 return false;
  }
-   bool ListNode::equal( ListNode& list1, ListNode& list2)
+   bool ListNode::equal( const ListNode& list1, const ListNode& list2)
  {
 	 if(list1.length != list2.length)
 	 {
@@ -423,3 +425,73 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
 	}
 	 return true;
  }
+   ListNode ListNode::div(const ListNode& list1,const ListNode& list2)
+{
+	if(less(list1,list2) == true)
+	{
+		ListNode lt3;
+		lt3.pushFront(0);
+		return lt3;
+	}
+	else if(equal(list1,list2) == true) 
+	{
+		ListNode lt3;
+		lt3.pushFront(1);
+		return lt3;
+	}
+	else if(list2.length == 1 && list2.head->data ==1)
+	 {
+		 return list1;
+	 }
+	ListNode div1 = list1;
+	ListNode div2 = list2;
+	std::vector<int> vec;
+	ListNode lt;
+	while(div1.head != nullptr)
+	{
+		lt.push(div1.head->data);
+		lt.print();
+
+		if(less(lt,div2) == true)
+		{
+			vec.push_back(0);
+		}
+		else
+		{
+			bool tr =true;
+			for(int i = 1;i <9;++i)
+			{
+				ListNode l1,l2;
+				l1.push(i);
+				l2.push(i+1);
+				if((great(lt,mul(l1,div2)) == true || equal(lt,mul(l1,div2))==true) && less(lt,mul(l2,div2))==true && tr)
+				{
+					vec.push_back(i);
+					ListNode mul1 = mul(l1,div2);
+					ListNode lt1;
+					lt1 = sub(lt,mul1);
+					lt = lt1;
+					lt.print();
+					tr = false;
+				}
+			}
+		}
+		label:
+		div1.head = div1.head->next;
+	}
+		bool havefirst = false;
+		ListNode lt3;
+		for(int i = 0;i<vec.size();i++)
+		{
+			if(vec[i] == 0 && havefirst)
+			{
+			lt3.pushFront(vec[i]);
+			}
+			if(vec[i] != 0)
+			{
+				lt3.pushFront(vec[i]);
+				havefirst = true;
+			}
+		}
+		return lt3;
+}

@@ -43,6 +43,11 @@ BigInteger operator*(const BigInteger& bgi1,const BigInteger& bgi2)
   bgi.Number = bgi.Number.sub(bgi1.Number,bgi2.Number);
   return bgi;
 }
+ BigInteger operator/(const BigInteger& bgi1,const BigInteger& bgi2){
+  BigInteger bgi;
+  bgi.Number = bgi.Number.div(bgi1.Number,bgi2.Number);
+  return bgi;
+}
  bool operator>(BigInteger& bgi1,BigInteger& bgi2)
  {
 	 BigInteger bgi;
