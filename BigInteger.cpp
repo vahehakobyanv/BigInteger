@@ -56,18 +56,18 @@ BigInteger operator*(const BigInteger& bgi1,const BigInteger& bgi2)
  bool operator>(BigInteger& bgi1,BigInteger& bgi2)
  {
 	 BigInteger bgi;
-	 bool bl = bgi.Number.great(bgi1.Number,bgi2.Number);
+	 bool bl = bgi.Number.isGreat(bgi1.Number,bgi2.Number);
 	 return bl;
  }
  bool operator<(BigInteger& bgi1,BigInteger& bgi2)
  {
 	 BigInteger bgi;
-	 bool bl = bgi.Number.less(bgi1.Number,bgi2.Number);
+	 bool bl = bgi.Number.isLess(bgi1.Number,bgi2.Number);
 	 return bl;
  }
  bool operator==(BigInteger& bgi1,BigInteger& bgi2)
  {
 	 BigInteger bgi;
-	 bool bl = bgi.Number.equal(bgi1.Number,bgi2.Number);
+	 bool bl = bgi.Number.isEqual(bgi1.Number,bgi2.Number);
 	 return bl;
  }

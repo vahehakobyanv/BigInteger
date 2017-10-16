@@ -352,7 +352,7 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
     }
     return list4;
  }
- bool ListNode::great( const ListNode& list1,const ListNode& list2)
+ bool ListNode::isGreat( const ListNode& list1,const ListNode& list2)
  {
 	 if(list1.length > list2.length)
 	 {
@@ -379,7 +379,7 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
 	}
 	 return false;
  }
-  bool ListNode::less(const ListNode& list1,const ListNode& list2)
+  bool ListNode::isLess(const ListNode& list1,const ListNode& list2)
  {
 	 Node* ar = list1.head;
 	 Node* arr = list2.head;
@@ -427,7 +427,7 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
 	}
 	 return false;
  }
-   bool ListNode::equal( const ListNode& list1, const ListNode& list2)
+   bool ListNode::isEqual( const ListNode& list1, const ListNode& list2)
  {
 	 if(list1.length != list2.length)
 	 {
@@ -457,13 +457,13 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
     std::cout<<x<<": didn`t divide in zero";
     exit(EXIT_FAILURE);
    }
-	if(less(list1,list2) == true)
+	if(isLess(list1,list2) == true)
 	{
 		ListNode lt3;
 		lt3.pushFront(0);
 		return lt3;
 	}
-	else if(equal(list1,list2) == true) 
+	else if(isEqual(list1,list2) == true) 
 	{
 		ListNode lt3;
 		lt3.pushFront(1);
@@ -481,7 +481,7 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
 	{
 		lt.push(div1.head->data);
 
-		if(less(lt,div2) == true)
+		if(isLess(lt,div2) == true)
 		{
 			vec.push_back(0);
 		}
@@ -493,7 +493,7 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
 				ListNode l1,l2;
 				l1.push(i);
 				l2.push(i+1);
-				if((great(lt,mul(l1,div2)) == true || equal(lt,mul(l1,div2))==true) && less(lt,mul(l2,div2))==true && tr && i != 9)
+				if((isGreat(lt,mul(l1,div2)) == true || isEqual(lt,mul(l1,div2))==true) && isLess(lt,mul(l2,div2))==true && tr && i != 9)
 				{
 					vec.push_back(i);
 					ListNode mul1 = mul(l1,div2);
@@ -503,7 +503,7 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
 					lt = lt1;
 					tr = false;
 				}
-				else if((great(lt,mul(l1,div2)) == true || equal(lt,mul(l1,div2))==true) && tr && i == 9)
+				else if((isGreat(lt,mul(l1,div2)) == true || isEqual(lt,mul(l1,div2))==true) && tr && i == 9)
 				{
 					vec.push_back(i);
 					ListNode mul1 = mul(l1,div2);

@@ -8,7 +8,7 @@ int main() {
 	reso.printBigInteger();
 
 	 BigInteger bg31("687892452");
-  BigInteger bg1_mul1("0");
+  BigInteger bg1_mul1("687892452");
   BigInteger bgg_mul1 = bg31/bg1_mul1;
   bgg_mul1.printBigInteger();
 
