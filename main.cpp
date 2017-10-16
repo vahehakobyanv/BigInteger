@@ -2,8 +2,8 @@
 #include"BigInteger.h"
 
 int main() {
-	 BigInteger bg31("25012");
-  BigInteger bg1_mul1("123");
+	 BigInteger bg31("687892452");
+  BigInteger bg1_mul1("0");
   BigInteger bgg_mul1 = bg31/bg1_mul1;
   bgg_mul1.printBigInteger();
 
