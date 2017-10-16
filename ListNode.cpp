@@ -538,3 +538,10 @@ ListNode ListNode::sub(const ListNode& list1,const ListNode& list2) {
 		}
 		return lt3;
 }
+    ListNode ListNode::res(const ListNode& list1,const ListNode& list2)
+	{
+		ListNode lt = div(list1,list2);
+		ListNode lt_mul = mul(lt,list2);
+		ListNode ret = sub(list1,lt_mul);
+		return ret;
+	}

@@ -2,6 +2,11 @@
 #include"BigInteger.h"
 
 int main() {
+	BigInteger res("159");
+	BigInteger res1("7");
+	BigInteger reso = res%res1;
+	reso.printBigInteger();
+
 	 BigInteger bg31("687892452");
   BigInteger bg1_mul1("0");
   BigInteger bgg_mul1 = bg31/bg1_mul1;

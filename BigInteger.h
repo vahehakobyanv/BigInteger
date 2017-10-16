@@ -14,6 +14,7 @@ class BigInteger {
     friend BigInteger operator-(const BigInteger& bgi1,const BigInteger& bgi2);
 	friend BigInteger operator*(const BigInteger& bgi1,const BigInteger& bgi2);
 	friend BigInteger operator/(const BigInteger& bgi1,const BigInteger& bgi2);
+	friend BigInteger operator%(const BigInteger& bgi1,const BigInteger& bgi2);
 	friend bool operator>(BigInteger& bgi1, BigInteger& bgi2);
 	friend bool operator<(BigInteger& bgi1, BigInteger& bgi2);
 	friend bool operator==(BigInteger& bgi1, BigInteger& bgi2);
